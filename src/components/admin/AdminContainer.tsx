@@ -1,4 +1,5 @@
 // src/components/admin/AdminContainer.tsx
+// small comment
 import React, { useState, useEffect } from 'react';
 import AdminLectureForm from './AdminLectureForm';
 import type { Lecture } from '../../types/lecture';
