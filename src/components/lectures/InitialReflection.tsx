@@ -21,6 +21,12 @@ const InitialReflection: React.FC<InitialReflectionProps> = ({ lecture, onComple
     }
   }, [lecture.id]);
 
+  const getInitialReflectionPrompt = () => {
+    // Find the initial reflection prompt
+    const initialPrompt = lecture.prompts.reflection.find(p => p.type === 'initial');
+    return initialPrompt?.text || 'Take some time to reflect on the key ideas from the lecture.';
+  };
+
   // Function to count words more accurately
   const countWords = (text: string): number => {
     return text.trim().split(/\s+/).filter(word => word.length > 0).length;
@@ -44,8 +50,8 @@ const InitialReflection: React.FC<InitialReflectionProps> = ({ lecture, onComple
 
   return (
     <div className="bg-gray-100 text-gray-900 rounded-lg shadow p-6 max-w-3xl mx-auto mt-6">
-      <h2 className="text-xl font-bold mb-4">Initial Reflection</h2>
-      <p className="text-gray-700 mb-4">Take some time to reflect on the key ideas from the lecture.</p>
+    <h2 className="text-xl font-bold mb-4">Initial Reflection</h2>
+    <p className="text-gray-700 mb-4">{getInitialReflectionPrompt()}</p>
 
       <div className="mb-2 flex justify-between items-center">
         <span className="text-sm text-gray-500">

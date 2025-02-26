@@ -3,7 +3,7 @@ import ReadinessCheck from './ReadinessCheck';
 import InitialReflection from './InitialReflection';
 import MasteryReflection from './MasteryReflection';
 import LectureNavigation from './LectureNavigation';
-import introduction from '../../data/lectures/introduction';
+import introduction from "../../data/lectures/introductions/intro-philosophy-problems-and-scope";
 import type { LectureProgress } from '../../types/lecture';
 
 const LectureTest = () => {
